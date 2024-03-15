@@ -1,0 +1,56 @@
+#N canvas 17 269 1276 758 12;
+#X obj 516 97 osc~;
+#X text 555 98 signal;
+#X text 567 71 messages;
+#X obj 516 70 unpack;
+#X obj 514 310 unpack;
+#X msg 514 270 50 100;
+#X floatatom 514 354 5 0 0 0 - - -;
+#X floatatom 568 354 5 0 0 0 - - -;
+#X obj 568 387 / 2;
+#X floatatom 568 421 5 0 0 0 - - -;
+#X obj 875 308 osc~;
+#X floatatom 875 269 5 0 0 0 - - -;
+#X obj 875 352 *~ 0.3;
+#X obj 875 397 dac~;
+#X obj 515 156 line;
+#X obj 515 181 line~;
+#X text 514 49 ex. 1;
+#X text 514 134 ex. 2;
+#X text 511 241 ex. 3;
+#X text 873 244 ex. 5;
+#X text 688 243 ex. 4;
+#X obj 688 283 osc~ 440;
+#X obj 688 317 cos~;
+#X obj 688 351 bp~;
+#X text 62 42 Objects Create shortcut: Command 1 There are two types
+of obects: those that deal with numbers and messages \, and those that
+deal with signals. Signal based ojects are denoted by a tilde \, ~
+\, in their name. There are some objects that can be either type depending
+on whether a tilde is specified \, and they will deal in different
+inputs and outputs. Another built in aid for users is that connections
+(the lines in between objects) re different thickness depending on
+type. As is shown below \, messages are a thin line while signals are
+thick lines. Example 3 shows an "unpack" object whose purpose is to
+take multi element messages and break them down into their components.
+It receives messages and outputs messages. Example 4 shows three signal
+objects passing thick signal connections in series. Example 5 shows
+a mixture of input and outputs. The osc~ object takes in messages defining
+frequency in Hz (numbers) and then outputs a signal based on those
+messages.;
+#X text 720 351 thick lines;
+#X text 724 317 tilde object;
+#X text 511 455 messages = thin lines;
+#X text 685 385 signals = thick lines;
+#X text 871 437 some signal objects have meesage inputs in order to
+specify the type of signal they output.;
+#X connect 4 0 6 0;
+#X connect 4 1 7 0;
+#X connect 5 0 4 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 10 0 12 0;
+#X connect 11 0 10 0;
+#X connect 12 0 13 0;
+#X connect 21 0 22 0;
+#X connect 22 0 23 0;

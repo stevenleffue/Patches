@@ -1,0 +1,23 @@
+#N canvas 39 228 955 504 12;
+#X obj 638 100 osc~;
+#X text 717 99 objects;
+#X msg 640 177;
+#X text 720 176 message;
+#X floatatom 641 257 5 0 0 0 - - -;
+#X text 721 256 float;
+#X symbolatom 640 337 10 0 0 0 - - -;
+#X text 722 336 symbol;
+#X text 639 402 comment;
+#X text 726 402 comment;
+#X text 553 99 command 1;
+#X text 555 176 command 2;
+#X text 558 256 command 3;
+#X text 556 336 command 4;
+#X text 558 402 command 5;
+#X text 553 26 command E: edit mode toggle;
+#X text 74 72 Keyboard shortcuts for editing and creating basic types.
+'Command E' toggles editing mode on and off. In editing mode \, objects
+can be renamed \, moved \, and permanently modified in their basic
+definition. When editing mode is turned off \, user interaction is
+limited to float boxe manipulation \, bangs \, and other UI style interactions
+in patches.;

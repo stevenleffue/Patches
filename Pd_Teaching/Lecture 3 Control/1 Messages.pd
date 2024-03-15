@@ -1,0 +1,87 @@
+#N canvas 166 59 1220 791 12;
+#X floatatom 228 110 0 0 0 0 - - -;
+#X floatatom 187 109 0 0 0 0 - - -;
+#X msg 187 56 5 6;
+#X floatatom 135 108 0 0 0 0 - - -;
+#X floatatom 67 105 0 0 0 0 - - -;
+#X text 33 21 Most Pd messages are just numbers or short lists of numbers:
+;
+#X msg 67 55 5;
+#X obj 67 80 + 9;
+#X obj 135 83 +;
+#X obj 187 84 unpack;
+#X msg 291 55 5;
+#X obj 291 107 print;
+#X obj 291 81 pack 34 78;
+#X msg 135 55 5 6;
+#X msg 56 184 message boxes;
+#X text 38 212 Message boxes hold one or more message. Anytime the
+message box receives any message at all \, the messages in the box
+are all sent to their destinations.;
+#X obj 128 488 print;
+#X msg 128 428 60 64;
+#X msg 128 458 pitch \$1 \, velocity \$2;
+#X msg 73 587 123 \; my-receiver-name 858 \; another-receiver -45;
+#X text 38 260 Clicking on a message also sends it \, so you can use
+message boxes for push buttons. For instance \, click here while watching
+the printout window:;
+#X msg 126 319 walk the dog;
+#X obj 126 348 print;
+#X text 34 383 You can separate multiple messages by commas. Also \,
+you can use "\$1" \, "\$2" \, etc. to make variable messages:, f 56
+;
+#X text 45 518 Finally \, if you separate messages by a semicolon instead
+of a comma \, the following message(s) are re-routed to named objects
+such as "receives":;
+#X obj 73 642 print;
+#X obj 277 587 receive my-receiver-name;
+#X floatatom 277 611 0 0 0 0 - - -;
+#X floatatom 276 658 0 0 0 0 - - -;
+#X obj 276 634 receive another-receiver;
+#X text 177 348 <= object (different border);
+#X text 222 318 <= message;
+#X msg 639 373 1 2 3 skidoo monkey \; bird monkey \; \, \; \$3 \$4-foo
+;
+#X msg 639 60 set dog;
+#X msg 674 146 add monkey;
+#X msg 686 181 add2 bird;
+#X msg 664 114 set;
+#X msg 650 85 set 1 2 3 skidoo;
+#X text 692 115 "set" with no arguments clears it;
+#X text 775 68 "set" to set contents (numbers and/or symbols);
+#X text 757 140 "add" to add numbers and/or symbols \, plus a terminating
+semicolon, f 36;
+#X text 765 183 "add2" to add contents without the terminating semicolon
+;
+#X msg 702 211 addcomma;
+#X msg 712 238 addsemi;
+#X msg 736 293 adddollsym 4-foo;
+#X msg 724 265 adddollar 3;
+#X text 770 211 add a comma;
+#X text 773 237 add a semicolon;
+#X text 816 265 add a dollar-sign argument;
+#X text 860 292 add a dollar-sign-plus-symbol argument;
+#X connect 2 0 9 0;
+#X connect 6 0 7 0;
+#X connect 7 0 4 0;
+#X connect 8 0 3 0;
+#X connect 9 0 1 0;
+#X connect 9 1 0 0;
+#X connect 10 0 12 0;
+#X connect 12 0 11 0;
+#X connect 13 0 8 0;
+#X connect 17 0 18 0;
+#X connect 18 0 16 0;
+#X connect 19 0 25 0;
+#X connect 21 0 22 0;
+#X connect 26 0 27 0;
+#X connect 29 0 28 0;
+#X connect 33 0 32 0;
+#X connect 34 0 32 0;
+#X connect 35 0 32 0;
+#X connect 36 0 32 0;
+#X connect 37 0 32 0;
+#X connect 42 0 32 0;
+#X connect 43 0 32 0;
+#X connect 44 0 32 0;
+#X connect 45 0 32 0;

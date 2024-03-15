@@ -1,0 +1,75 @@
+#N canvas 230 100 989 730 12;
+#X floatatom 161 138 0 0 0 0 - - -;
+#X floatatom 129 187 0 0 0 0 - - -;
+#X msg 117 137 bang;
+#X obj 129 163 float;
+#X text 186 165 same as:;
+#X floatatom 289 136 0 0 0 0 - - -;
+#X floatatom 271 187 0 0 0 0 - - -;
+#X msg 245 135 bang;
+#X obj 271 163 f;
+#X floatatom 191 403 0 0 0 0 - - -;
+#X msg 134 354 bang;
+#X obj 191 378 + 1;
+#X obj 134 379 float;
+#X text 47 42 1). The "float" (or just "f") box is a storage element
+holding one floating-point number. The cold inlet (i.e. \, the one
+on the right) stores numbers. Sending the message "bang" to the hot
+inlet gets the number back out:, f 48;
+#X text 50 308 2). Here's a simple counter. Click repeatedly on the
+"bang" message to see it:, f 41;
+#X floatatom 126 635 0 0 0 0 - - -;
+#X msg 72 555 bang;
+#X obj 126 610 + 1;
+#X obj 72 584 metro 500;
+#X msg 118 555 stop;
+#X obj 72 610 float;
+#X text 151 582 <= new object: metronome.;
+#X text 181 599 The "500" means every 500 milliseconds - i.e. \, twice
+a second., f 25;
+#X text 49 503 3). Here's a timed counter. Hit the "bang" to start
+it..., f 39;
+#X floatatom 709 265 0 0 0 0 - - -;
+#X obj 709 239 + 1;
+#X msg 709 135 bang;
+#X obj 709 187 metro 500;
+#X msg 618 193 stop;
+#X obj 709 213 float;
+#X obj 709 161 trigger bang bang;
+#X msg 825 193 0;
+#X obj 618 167 select 10;
+#X text 858 187 first set value to zero, f 13;
+#X text 839 161 initialization is in two steps;
+#X text 832 221 (before starting the metronome);
+#X text 746 134 <= click here to start;
+#X text 546 146 conditionally stop the metronome, f 13;
+#X text 788 263 select can be abbreviated as:;
+#X text 545 66 4). Here's a counter that counts from 1 to 10:;
+#X connect 0 0 3 1;
+#X connect 2 0 3 0;
+#X connect 3 0 1 0;
+#X connect 5 0 8 1;
+#X connect 7 0 8 0;
+#X connect 8 0 6 0;
+#X connect 10 0 12 0;
+#X connect 11 0 9 0;
+#X connect 11 0 12 1;
+#X connect 12 0 11 0;
+#X connect 16 0 18 0;
+#X connect 17 0 15 0;
+#X connect 17 0 20 1;
+#X connect 18 0 20 0;
+#X connect 19 0 18 0;
+#X connect 19 0 18 0;
+#X connect 20 0 17 0;
+#X connect 25 0 24 0;
+#X connect 25 0 29 1;
+#X connect 25 0 32 0;
+#X connect 26 0 30 0;
+#X connect 27 0 29 0;
+#X connect 28 0 27 0;
+#X connect 29 0 25 0;
+#X connect 30 0 27 0;
+#X connect 30 1 31 0;
+#X connect 31 0 29 1;
+#X connect 32 0 28 0;

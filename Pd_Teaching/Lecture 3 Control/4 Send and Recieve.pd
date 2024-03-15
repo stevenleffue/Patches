@@ -1,0 +1,45 @@
+#N canvas 243 274 757 494 12;
+#X floatatom 85 198 0 0 0 0 - - -;
+#X obj 85 171 receive crackers;
+#X floatatom 245 203 0 0 0 0 - - -;
+#X obj 245 176 receive pickles;
+#X obj 85 144 send crackers;
+#X obj 247 138 send pickles;
+#X obj 386 137 send pickles;
+#X floatatom 389 202 0 0 0 0 - - -;
+#X obj 389 175 receive pickles;
+#X floatatom 85 117 0 0 0 0 - - -;
+#X floatatom 247 111 0 0 0 0 - - -;
+#X floatatom 386 110 0 0 0 0 - - -;
+#X text 44 15 The send and receive objects allow you to make non-local
+connections. These work globally--you can use them to make two different
+patches intercommunicate if you wish. Any message a "send" gets appears
+at the output of every receive of the same name. There can be any number
+of sends and receives sharing the same name:, f 69;
+#X obj 86 322 osc~ 440;
+#X obj 86 424 s~ osc;
+#X obj 230 301 r~ osc;
+#X obj 230 325 env~;
+#X floatatom 230 421 5 0 0 0 - - -;
+#X obj 86 386 *~;
+#X msg 124 351 0;
+#X msg 160 351 1;
+#X obj 370 321 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X msg 230 349 \$1 1000;
+#X obj 230 390 line;
+#X connect 1 0 0 0;
+#X connect 3 0 2 0;
+#X connect 8 0 7 0;
+#X connect 9 0 4 0;
+#X connect 10 0 5 0;
+#X connect 11 0 6 0;
+#X connect 13 0 18 0;
+#X connect 15 0 16 0;
+#X connect 16 0 22 0;
+#X connect 18 0 14 0;
+#X connect 19 0 18 1;
+#X connect 20 0 18 1;
+#X connect 22 0 23 0;
+#X connect 23 0 17 0;
+#X connect 23 0 21 0;
